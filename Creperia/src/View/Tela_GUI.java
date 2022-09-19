@@ -40,6 +40,7 @@ public class Tela_GUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         ValorTotal_LBL = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName(""); // NOI18N
@@ -244,9 +245,11 @@ public class Tela_GUI extends javax.swing.JFrame {
 
         jLabel5.setText("Pagamento por Cartão :");
 
-        jLabel6.setText("Valor da Compra : ");
+        jLabel6.setText("Valor total da Compra : ");
 
         ValorTotal_LBL.setText("0:00");
+
+        jLabel7.setText("Insira a quantia em dinheiro :");
 
         javax.swing.GroupLayout Pagamento_PNLLayout = new javax.swing.GroupLayout(Pagamento_PNL);
         Pagamento_PNL.setLayout(Pagamento_PNLLayout);
@@ -260,12 +263,13 @@ public class Tela_GUI extends javax.swing.JFrame {
                         .addComponent(Sair_BTN))
                     .addGroup(Pagamento_PNLLayout.createSequentialGroup()
                         .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
                             .addGroup(Pagamento_PNLLayout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ValorTotal_LBL)))
-                        .addGap(0, 389, Short.MAX_VALUE)))
+                                .addComponent(ValorTotal_LBL))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7))
+                        .addGap(0, 360, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Pagamento_PNLLayout.setVerticalGroup(
@@ -277,7 +281,9 @@ public class Tela_GUI extends javax.swing.JFrame {
                 .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(ValorTotal_LBL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
                 .addComponent(Sair_BTN)
                 .addContainerGap())
         );
@@ -389,5 +395,6 @@ public class Tela_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
