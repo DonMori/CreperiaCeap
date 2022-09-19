@@ -27,6 +27,7 @@ public class Tela_GUI extends javax.swing.JFrame {
         Imagem_CDC = new javax.swing.JLabel();
         Pedir_DoceLeite_BTN = new javax.swing.JButton();
         Pedir_Chocolate_BTN = new javax.swing.JButton();
+        CeapLoguinho_2_LBL = new javax.swing.JLabel();
         CrSalgados_PNL = new javax.swing.JPanel();
         CrepesSalgados_LBL = new javax.swing.JLabel();
         CrepeFrango_LBL = new javax.swing.JLabel();
@@ -35,12 +36,17 @@ public class Tela_GUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         Pedir_Frango_BTN = new javax.swing.JButton();
         Pedir_Carne_BTN = new javax.swing.JButton();
+        CeapLoguinho_1_LBL = new javax.swing.JLabel();
         Pagamento_PNL = new javax.swing.JPanel();
         Sair_BTN = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         ValorTotal_LBL = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        Dinheiro_JTF = new javax.swing.JTextField();
+        RealizarCompra_BTN = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        CeapLoguinho_LBL = new javax.swing.JLabel();
+        ResultadoDaCompra_LBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName(""); // NOI18N
@@ -111,6 +117,8 @@ public class Tela_GUI extends javax.swing.JFrame {
             }
         });
 
+        CeapLoguinho_2_LBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ceap_Loguinho.png"))); // NOI18N
+
         javax.swing.GroupLayout CrDoces_PNLLayout = new javax.swing.GroupLayout(CrDoces_PNL);
         CrDoces_PNL.setLayout(CrDoces_PNLLayout);
         CrDoces_PNLLayout.setHorizontalGroup(
@@ -137,6 +145,9 @@ public class Tela_GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(30, 30, 30))
+            .addGroup(CrDoces_PNLLayout.createSequentialGroup()
+                .addComponent(CeapLoguinho_2_LBL)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         CrDoces_PNLLayout.setVerticalGroup(
             CrDoces_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +165,8 @@ public class Tela_GUI extends javax.swing.JFrame {
                 .addGroup(CrDoces_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Pedir_DoceLeite_BTN)
                     .addComponent(Pedir_Chocolate_BTN))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(CeapLoguinho_2_LBL))
         );
 
         Painel_PCG.addTab("Sabores Doces", CrDoces_PNL);
@@ -186,6 +198,8 @@ public class Tela_GUI extends javax.swing.JFrame {
             }
         });
 
+        CeapLoguinho_1_LBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ceap_Loguinho.png"))); // NOI18N
+
         javax.swing.GroupLayout CrSalgados_PNLLayout = new javax.swing.GroupLayout(CrSalgados_PNL);
         CrSalgados_PNL.setLayout(CrSalgados_PNLLayout);
         CrSalgados_PNLLayout.setHorizontalGroup(
@@ -214,6 +228,9 @@ public class Tela_GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Pedir_Carne_BTN)
                 .addGap(90, 90, 90))
+            .addGroup(CrSalgados_PNLLayout.createSequentialGroup()
+                .addComponent(CeapLoguinho_1_LBL)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         CrSalgados_PNLLayout.setVerticalGroup(
             CrSalgados_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,7 +248,8 @@ public class Tela_GUI extends javax.swing.JFrame {
                 .addGroup(CrSalgados_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Pedir_Frango_BTN)
                     .addComponent(Pedir_Carne_BTN))
-                .addGap(0, 138, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(CeapLoguinho_1_LBL))
         );
 
         Painel_PCG.addTab("Sabores Salgados", CrSalgados_PNL);
@@ -243,49 +261,85 @@ public class Tela_GUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Pagamento por Cartão :");
-
         jLabel6.setText("Valor total da Compra : ");
 
         ValorTotal_LBL.setText("0:00");
 
         jLabel7.setText("Insira a quantia em dinheiro :");
 
+        Dinheiro_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Dinheiro_JTFActionPerformed(evt);
+            }
+        });
+
+        RealizarCompra_BTN.setText("Realizar Compra");
+        RealizarCompra_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RealizarCompra_BTNActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Limpar");
+
+        CeapLoguinho_LBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ceap_Loguinho.png"))); // NOI18N
+
         javax.swing.GroupLayout Pagamento_PNLLayout = new javax.swing.GroupLayout(Pagamento_PNL);
         Pagamento_PNL.setLayout(Pagamento_PNLLayout);
         Pagamento_PNLLayout.setHorizontalGroup(
             Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagamento_PNLLayout.createSequentialGroup()
+                .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pagamento_PNLLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RealizarCompra_BTN, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addComponent(CeapLoguinho_LBL))
+                .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pagamento_PNLLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addComponent(Dinheiro_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(166, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagamento_PNLLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Sair_BTN)
+                        .addContainerGap())))
+            .addGroup(Pagamento_PNLLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagamento_PNLLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Sair_BTN))
                     .addGroup(Pagamento_PNLLayout.createSequentialGroup()
-                        .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Pagamento_PNLLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ValorTotal_LBL))
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7))
-                        .addGap(0, 360, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ValorTotal_LBL))
+                    .addComponent(ResultadoDaCompra_LBL))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pagamento_PNLLayout.setVerticalGroup(
             Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagamento_PNLLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(ValorTotal_LBL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
-                .addComponent(Sair_BTN)
-                .addContainerGap())
+                .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(Dinheiro_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RealizarCompra_BTN)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ResultadoDaCompra_LBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagamento_PNLLayout.createSequentialGroup()
+                        .addComponent(Sair_BTN)
+                        .addContainerGap())
+                    .addComponent(CeapLoguinho_LBL, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         Painel_PCG.addTab("Pagamento", Pagamento_PNL);
@@ -333,11 +387,29 @@ public class Tela_GUI extends javax.swing.JFrame {
         ValorTotal_LBL.setText(String.valueOf(valortotal));
     }//GEN-LAST:event_Pedir_Chocolate_BTNActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void Dinheiro_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dinheiro_JTFActionPerformed
+        
+    }//GEN-LAST:event_Dinheiro_JTFActionPerformed
+
+    private void RealizarCompra_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarCompra_BTNActionPerformed
+        quantia = Double.parseDouble(Dinheiro_JTF.getText());
+        
+        if (quantia == valortotal) {
+            ResultadoDaCompra_LBL.setText("Obrigado efetuada com sucesso!");
+        } else if (quantia < valortotal) {
+            double extra = 0;
+            extra = valortotal - quantia;
+            ResultadoDaCompra_LBL.setText("São necessários "+extra+" R$ para a compra ser efetuada!");
+        } else {
+            double troco = 0;
+            troco = quantia - valortotal;
+            ResultadoDaCompra_LBL.setText("Seu troco é de "+troco+" R$, obrigado pela sua compra!");
+        }
+    }//GEN-LAST:event_RealizarCompra_BTNActionPerformed
+
+    
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -360,7 +432,7 @@ public class Tela_GUI extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Tela_GUI().setVisible(true);
@@ -369,12 +441,16 @@ public class Tela_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CeapLoguinho_1_LBL;
+    private javax.swing.JLabel CeapLoguinho_2_LBL;
+    private javax.swing.JLabel CeapLoguinho_LBL;
     private javax.swing.JPanel CrDoces_PNL;
     private javax.swing.JPanel CrSalgados_PNL;
     private javax.swing.JLabel CrepeCarne_LBL;
     private javax.swing.JLabel CrepeFrango_LBL;
     private javax.swing.JLabel CrepesDoces_LBL;
     private javax.swing.JLabel CrepesSalgados_LBL;
+    private javax.swing.JTextField Dinheiro_JTF;
     private javax.swing.JLabel Imagem_CDC;
     private javax.swing.JLabel Imagem_CDL;
     private javax.swing.JPanel Inicio_PNL;
@@ -386,14 +462,16 @@ public class Tela_GUI extends javax.swing.JFrame {
     private javax.swing.JButton Pedir_Chocolate_BTN;
     private javax.swing.JButton Pedir_DoceLeite_BTN;
     private javax.swing.JButton Pedir_Frango_BTN;
+    private javax.swing.JButton RealizarCompra_BTN;
+    private javax.swing.JLabel ResultadoDaCompra_LBL;
     private javax.swing.JButton Sair_BTN;
     private javax.swing.JLabel Text_Under_Logo_LBL;
     private javax.swing.JLabel ValorTotal_LBL;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
