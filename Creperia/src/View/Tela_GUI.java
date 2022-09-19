@@ -44,7 +44,7 @@ public class Tela_GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Dinheiro_JTF = new javax.swing.JTextField();
         RealizarCompra_BTN = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Limpar_BTN = new javax.swing.JButton();
         CeapLoguinho_LBL = new javax.swing.JLabel();
         ResultadoDaCompra_LBL = new javax.swing.JLabel();
 
@@ -280,7 +280,12 @@ public class Tela_GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Limpar");
+        Limpar_BTN.setText("Limpar");
+        Limpar_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Limpar_BTNActionPerformed(evt);
+            }
+        });
 
         CeapLoguinho_LBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ceap_Loguinho.png"))); // NOI18N
 
@@ -300,7 +305,7 @@ public class Tela_GUI extends javax.swing.JFrame {
                     .addGroup(Pagamento_PNLLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
+                            .addComponent(Limpar_BTN)
                             .addComponent(Dinheiro_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(166, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagamento_PNLLayout.createSequentialGroup()
@@ -331,7 +336,7 @@ public class Tela_GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Pagamento_PNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RealizarCompra_BTN)
-                    .addComponent(jButton2))
+                    .addComponent(Limpar_BTN))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ResultadoDaCompra_LBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
@@ -396,16 +401,31 @@ public class Tela_GUI extends javax.swing.JFrame {
         
         if (quantia == valortotal) {
             ResultadoDaCompra_LBL.setText("Obrigado efetuada com sucesso!");
+            Dinheiro_JTF.setText("");
+            ValorTotal_LBL.setText("");
         } else if (quantia < valortotal) {
             double extra = 0;
             extra = valortotal - quantia;
             ResultadoDaCompra_LBL.setText("São necessários "+extra+" R$ para a compra ser efetuada!");
-        } else {
+            Dinheiro_JTF.setText("");
+        } else if (quantia > valortotal) {
             double troco = 0;
             troco = quantia - valortotal;
             ResultadoDaCompra_LBL.setText("Seu troco é de "+troco+" R$, obrigado pela sua compra!");
+            Dinheiro_JTF.setText("");
+            ValorTotal_LBL.setText("");
         }
     }//GEN-LAST:event_RealizarCompra_BTNActionPerformed
+
+    private void Limpar_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Limpar_BTNActionPerformed
+        preco = 0;
+        valortotal = 0;
+        quantia = 0;
+        
+        ResultadoDaCompra_LBL.setText("");
+        Dinheiro_JTF.setText("");
+        ValorTotal_LBL.setText("");
+    }//GEN-LAST:event_Limpar_BTNActionPerformed
 
     
     public static void main(String args[]) {
@@ -454,6 +474,7 @@ public class Tela_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel Imagem_CDC;
     private javax.swing.JLabel Imagem_CDL;
     private javax.swing.JPanel Inicio_PNL;
+    private javax.swing.JButton Limpar_BTN;
     private javax.swing.JLabel Logo_LBL;
     private javax.swing.JLabel Msg_LBL;
     private javax.swing.JPanel Pagamento_PNL;
@@ -467,7 +488,6 @@ public class Tela_GUI extends javax.swing.JFrame {
     private javax.swing.JButton Sair_BTN;
     private javax.swing.JLabel Text_Under_Logo_LBL;
     private javax.swing.JLabel ValorTotal_LBL;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

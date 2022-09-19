@@ -407,7 +407,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Limpar_BTN" min="-2" max="-2" attributes="0"/>
                                   <Component id="Dinheiro_JTF" min="-2" pref="190" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="166" max="32767" attributes="0"/>
@@ -449,7 +449,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="RealizarCompra_BTN" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Limpar_BTN" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="ResultadoDaCompra_LBL" min="-2" max="-2" attributes="0"/>
@@ -502,10 +502,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RealizarCompra_BTNActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="Limpar_BTN">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Limpar_BTNActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="CeapLoguinho_LBL">
               <Properties>
